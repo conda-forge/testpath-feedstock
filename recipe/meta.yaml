@@ -1,21 +1,19 @@
 {% set name = "testpath" %}
-{% set version = "0.3" %}
-{% set wheel_tag = "py2.py3-none-any" %}
-{% set fn = "{}-{}-{}.whl".format(name, version, wheel_tag) %}
-{% set sha256 = "f16b2cb3b03e1ada4fb0200b265a4446f92f3ba4b9d88ace34f51c54ab6d294e" %}
+{% set version = "0.3.1" %}
+{% set sha256 = "0d5337839c788da5900df70f8e01015aec141aa3fe7936cb0d0a2953f7ac7609" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: {{ fn }}
-  url: https://pypi.io/packages/py2.py3/{{ name[0] }}/{{ name }}/{{ fn }}
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   number: 0
-  script: pip install --no-deps {{ fn }}
+  script: pip install --no-deps .
 
 requirements:
   build:
@@ -32,11 +30,9 @@ test:
 about:
   home: https://testpath.readthedocs.io
   license: MIT
+  license_file: LICENSE
   license_family: MIT
-  # FIXME: flit wheels don't include license file, only reference in metadata
-  # license_file
   summary: Testpath is a collection of utilities for Python code working with files and commands.
-
   description: |
     Testpath contains functions to check things on the filesystem,
     and tools for mocking system commands and recording calls to those.
