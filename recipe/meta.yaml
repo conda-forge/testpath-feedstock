@@ -10,12 +10,12 @@ source:
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: {{PYTHON}} -m flit install --deps=none
 
 requirements:
   host:
     - python
-    - pip
+    - flit
   run:
     - python
     - pathlib2  # [py2k]
