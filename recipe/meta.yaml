@@ -1,4 +1,4 @@
-{% set version = "0.3.1" %}
+{% set version = "0.4" %}
 
 package:
   name: testpath
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/testpath/testpath-{{ version }}.tar.gz
-  sha256: 0d5337839c788da5900df70f8e01015aec141aa3fe7936cb0d0a2953f7ac7609
+  sha256: 4af56bf5aa6f5c00c58e877236ec07f3242291fcdb3f3aa2416461d949aeab80
 
 build:
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
