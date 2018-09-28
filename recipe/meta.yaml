@@ -10,15 +10,15 @@ source:
 
 build:
   number: 0
-  noarch: python
+  skip: True  # [py2k]
   script: {{PYTHON}} -m flit install --deps=none
 
 requirements:
   host:
-    - python >=3
+    - python
     - flit
   run:
-    - python >=3
+    - python
 
 test:
   imports:
