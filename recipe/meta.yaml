@@ -10,15 +10,15 @@ source:
 
 build:
   number: 0
+  noarch: python
   script: {{PYTHON}} -m flit install --deps=none
 
 requirements:
   host:
-    - python
+    - python >=3
     - flit
   run:
-    - python
-    - pathlib2  # [py2k]
+    - python >=3
 
 test:
   imports:
