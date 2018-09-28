@@ -1,4 +1,4 @@
-{% set version = "0.3.1" %}
+{% set version = "0.4.1" %}
 
 package:
   name: testpath
@@ -6,19 +6,19 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/testpath/testpath-{{ version }}.tar.gz
-  sha256: 0d5337839c788da5900df70f8e01015aec141aa3fe7936cb0d0a2953f7ac7609
+  sha256: e4824c689b97e3cfc76b440add3d20a4bb28a671079787a3d07a6bc3ba3d1eca
 
 build:
-  number: 1
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  number: 0
+  skip: True  # [py2k]
+  script: {{PYTHON}} -m flit install --deps=none
 
 requirements:
   host:
     - python
-    - pip
+    - flit
   run:
     - python
-    - pathlib2  # [py2k]
 
 test:
   imports:
