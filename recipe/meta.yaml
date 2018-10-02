@@ -26,9 +26,9 @@ test:
 
 about:
   home: https://testpath.readthedocs.io
-  license: MIT
+  license: BSD-3-Clause
   license_file: LICENSE
-  license_family: MIT
+  license_family: BSD
   summary: Testpath is a collection of utilities for Python code working with files and commands.
   description: |
     Testpath contains functions to check things on the filesystem,
