@@ -3,7 +3,7 @@ About testpath
 
 Home: https://testpath.readthedocs.io
 
-Package license: MIT
+Package license: BSD-3-Clause
 
 Feedstock license: BSD 3-Clause
 
