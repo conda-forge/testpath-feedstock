@@ -1,4 +1,4 @@
-{% set version = "0.4.1" %}
+{% set version = "0.4.2" %}
 
 package:
   name: testpath
@@ -6,17 +6,16 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/testpath/testpath-{{ version }}.tar.gz
-  sha256: e4824c689b97e3cfc76b440add3d20a4bb28a671079787a3d07a6bc3ba3d1eca
+  sha256: b694b3d9288dbd81685c5d2e7140b81365d46c29f5db4bc659de5aa6b98780f8
 
 build:
   number: 0
-  skip: True  # [py2k]
-  script: {{PYTHON}} -m flit install --deps=none
+  script: "{{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed -vvv"
 
 requirements:
   host:
     - python
-    - flit
+    - pip
   run:
     - python
 
@@ -26,9 +25,9 @@ test:
 
 about:
   home: https://testpath.readthedocs.io
-  license: MIT
+  license: BSD-3-Clause
   license_file: LICENSE
-  license_family: MIT
+  license_family: BSD
   summary: Testpath is a collection of utilities for Python code working with files and commands.
   description: |
     Testpath contains functions to check things on the filesystem,
