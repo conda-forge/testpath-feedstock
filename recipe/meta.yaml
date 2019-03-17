@@ -9,13 +9,15 @@ source:
   sha256: b694b3d9288dbd81685c5d2e7140b81365d46c29f5db4bc659de5aa6b98780f8
 
 build:
-  number: 1000
-  script: "{{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed -vvv"
+  number: 1001
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv"
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
+    - flit
   run:
     - python
 
