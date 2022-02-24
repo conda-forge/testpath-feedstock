@@ -1,4 +1,4 @@
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
 
 package:
   name: testpath
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/testpath/testpath-{{ version }}.tar.gz
-  sha256: 1acf7a0bcd3004ae8357409fc33751e16d37ccc650921da1094a86581ad1e417
+  sha256: 2f1b97e6442c02681ebe01bd84f531028a7caea1af3825000f52345c30285e0f
 
 build:
   number: 0
